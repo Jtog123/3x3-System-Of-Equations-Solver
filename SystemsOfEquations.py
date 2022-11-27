@@ -156,6 +156,11 @@ class Application():
         
         for entry in self.equates:
             entry.delete(0,END)
+        
+        self.value1Label.config(text='None')
+        self.value2Label.config(text='None')
+        self.value3Label.config(text='None')
+
 
 def main():
     window = Tk()
