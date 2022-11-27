@@ -9,7 +9,7 @@ class Application():
     def __init__(self, root):
 
         self.window = root 
-        self.makeCanvas = Canvas(self.window, width = 500, height = 500, bg='chocolate')
+        self.makeCanvas = Canvas(self.window, width = 500, height = 500, bg='#D8DAD3')
         self.makeCanvas.place(x=0,y=0)
 
         # Position Entry boxes
@@ -18,8 +18,8 @@ class Application():
         self.count = 0
 
         #Title
-        self.title = Label(self.window, text="3 x 3 System of equations solver", width = 30, bg='chocolate', font=('Arial', 15))
-        self.title.place(x=60, y = 30)
+        self.title = Label(self.window, text="3 x 3 System of equations solver", width = 30, fg='#0072BB',bg='#D8DAD3', font=('Arial', 15, 'bold'))
+        self.title.place(x=40, y = 30)
 
         # Values of system of equations
         self.xVal = None
@@ -48,35 +48,35 @@ class Application():
             self.yEquatesPos += 100
          
         # X Labels
-        self.xLabel = Label(self.window, text='X', width=3, bg='chocolate', font=('Arial',12))
+        self.xLabel = Label(self.window, text='X', width=3, bg='#D8DAD3', font=('Arial',12))
         self.xLabel.place(x=90,y=450)
-        self.equal1Label = Label(self.window, text='=', bg='chocolate', font=('Arial',12))
+        self.equal1Label = Label(self.window, text='=', bg='#D8DAD3', font=('Arial',12))
         self.equal1Label.place(x=115,y=450)
-        self.value1Label = Label(self.window, text=str(self.xVal), bg='chocolate', font = ('Arial', 12))
+        self.value1Label = Label(self.window, text=str(self.xVal), bg='#D8DAD3', font = ('Arial', 12))
         self.value1Label.place(x = 130, y = 450)
 
         # Y Labels
-        self.yLabel = Label(self.window, text='Y', width=3, bg='chocolate', font=('Arial',12))
+        self.yLabel = Label(self.window, text='Y', width=3, bg='#D8DAD3', font=('Arial',12))
         self.yLabel.place(x=190,y=450)
-        self.equal2Label = Label(self.window, text='=', bg='chocolate', font=('Arial',12))
+        self.equal2Label = Label(self.window, text='=', bg='#D8DAD3', font=('Arial',12))
         self.equal2Label.place(x=215,y=450)
-        self.value2Label = Label(self.window, text=str(self.yVal), bg='chocolate', font = ('Arial', 12))
+        self.value2Label = Label(self.window, text=str(self.yVal), bg='#D8DAD3', font = ('Arial', 12))
         self.value2Label.place(x = 230, y = 450)
 
         # Z Labels
-        self.zLabel = Label(self.window, text='Z', width=3, bg='chocolate', font=('Arial',12))
+        self.zLabel = Label(self.window, text='Z', width=3, bg='#D8DAD3', font=('Arial',12))
         self.zLabel.place(x=290,y=450)
-        self.equal3Label = Label(self.window, text='=', bg='chocolate', font=('Arial',12))
+        self.equal3Label = Label(self.window, text='=', bg='#D8DAD3', font=('Arial',12))
         self.equal3Label.place(x=315,y=450)
-        self.value3Label = Label(self.window, text=str(self.yVal), bg='chocolate', font = ('Arial', 12))
+        self.value3Label = Label(self.window, text=str(self.yVal), bg='#D8DAD3', font = ('Arial', 12))
         self.value3Label.place(x = 330, y = 450)
  
         # Buttons
-        self.calcButton = Button(self.window, bg='green',text='Calculate', width = 8, height=1, command  = lambda: self.takeInputMatrix(self.matrix, self.equates))
-        self.calcButton.place(x=140,y=400)
+        self.calcButton = Button(self.window, bg='#7BD389',text='Calculate', width = 8, height=1, command  = lambda: self.takeInputMatrix(self.matrix, self.equates))
+        self.calcButton.place(x=130,y=390)
 
-        self.clearButton = Button(self.window, bg='red', text='Clear', width = 8, height=1, command=self.clear )
-        self.clearButton.place(x=260,y=400)
+        self.clearButton = Button(self.window, bg='#CC5A71', text='Clear', width = 8, height=1, command=self.clear )
+        self.clearButton.place(x=250,y=390)
 
         # Matrix lines
         self.makeCanvas.create_line(70, 80, 70, 340, width=4)
@@ -89,14 +89,14 @@ class Application():
         self.makeCanvas.create_line(345, 340, 377, 340, width=4)
 
         # Equals signs
-        self.makeCanvas.create_line(390,105,410,105,width=3)
-        self.makeCanvas.create_line(390,115,410,115,width=3)
+        self.makeCanvas.create_line(390,105,410,105,width=3,fill='#0072BB')
+        self.makeCanvas.create_line(390,115,410,115,width=3,fill='#0072BB')
 
-        self.makeCanvas.create_line(390,205,410,205,width=3)
-        self.makeCanvas.create_line(390,215,410,215,width=3)
+        self.makeCanvas.create_line(390,205,410,205,width=3,fill='#0072BB')
+        self.makeCanvas.create_line(390,215,410,215,width=3,fill='#0072BB')
 
-        self.makeCanvas.create_line(390,305,410,305,width=3)
-        self.makeCanvas.create_line(390,315,410,315,width=3)
+        self.makeCanvas.create_line(390,305,410,305,width=3,fill='#0072BB')
+        self.makeCanvas.create_line(390,315,410,315,width=3,fill='#0072BB')
 
     #create a function takeInput
     def takeInputMatrix(self, matrix, equates):
